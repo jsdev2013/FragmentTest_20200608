@@ -3,14 +3,19 @@ package com.jisu.fragmenttest_20200608.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.jisu.fragmenttest_20200608.fragments.FirstFragment
+import com.jisu.fragmenttest_20200608.fragments.SecondFragment
 
 class myPagerAdapter (fm: FragmentManager) :FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {
-        TODO("Not yet implemented")
+        return when(position){
+            0 -> FirstFragment()
+            else -> SecondFragment()
+        }
     }
 
     override fun getCount(): Int {
-        TODO("Not yet implemented")
+        return 2
     }
 
 

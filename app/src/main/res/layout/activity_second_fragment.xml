@@ -5,27 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccent"
+    android:background="#FFE793"
     tools:context=".fragments.FirstFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="전화번호"/>
-
-    <EditText
-        android:id="@+id/telEd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
-
-    <Button
-        android:id="@+id/telBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="연결"
-        />
-
-
+        android:text="두번째"/>
 
 </LinearLayout>
