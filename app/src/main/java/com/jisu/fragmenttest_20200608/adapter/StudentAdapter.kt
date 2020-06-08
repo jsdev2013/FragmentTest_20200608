@@ -11,17 +11,26 @@ import com.jisu.fragmenttest_20200608.datas.Student
 import java.text.SimpleDateFormat
 import java.util.*
 
-class StudentAdapter(context: Context, resId: Int, list: List<Student>) : ArrayAdapter<Student>(context,resId,list) {
-    val mContext = context
-    val mList = list
+class StudentAdapter(val mContext: Context, val resId: Int, val mList: List<Student>) :
+    ArrayAdapter<Student>(mContext, resId, mList) {
+
+//    val mContext = context
+//    val mList = list
     val inf = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         var tempRow = convertView
 
-        if(tempRow == null ) {
-            tempRow = inf.inflate(R.layout.activity_student_list_item,null)
+//        if (tempRow == null) {
+//            tempRow = inf.inflate(R.layout.activity_student_list_item, null)
+//        }
+        
+        tempRow?.let {
+            //null이 아닐 땐 그냥 지나간다
+        }.let {
+            //null인 경우 새로 그린다
+            tempRow = inf.inflate(R.layout.activity_student_list_item, null)
         }
 
         val row = tempRow!!

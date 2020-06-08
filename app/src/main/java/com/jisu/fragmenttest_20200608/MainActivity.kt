@@ -18,6 +18,8 @@ class MainActivity : BaseActvity() {
     override fun setupEvents() {
         myPagerAdater = MyPagerAdapter(supportFragmentManager)
         myViewPager.adapter = myPagerAdater
+        myViewPager01.adapter = myPagerAdater
+
     }
 
     override fun setValues() {
