@@ -18,8 +18,9 @@ class MainActivity : BaseActvity() {
     override fun setupEvents() {
         myPagerAdater = MyPagerAdapter(supportFragmentManager)
         myViewPager.adapter = myPagerAdater
-        myViewPager01.adapter = myPagerAdater
 
+//        탭레이아웃과 뷰페이저를 연결
+         myTabLayout.setupWithViewPager(myViewPager)
     }
 
     override fun setValues() {
