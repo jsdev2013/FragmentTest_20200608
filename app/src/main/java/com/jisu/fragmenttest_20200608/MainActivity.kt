@@ -1,12 +1,12 @@
 package com.jisu.fragmenttest_20200608
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.jisu.fragmenttest_20200608.adapter.myPagerAdapter
+import com.jisu.fragmenttest_20200608.adapter.MyPagerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActvity() {
 
-    lateinit var myPagerAdater: myPagerAdapter
+    lateinit var myPagerAdater: MyPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +16,8 @@ class MainActivity : BaseActvity() {
     }
 
     override fun setupEvents() {
-
+        myPagerAdater = MyPagerAdapter(supportFragmentManager)
+        myViewPager.adapter = myPagerAdater
     }
 
     override fun setValues() {

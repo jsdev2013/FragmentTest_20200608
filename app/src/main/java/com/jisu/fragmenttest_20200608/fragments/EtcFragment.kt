@@ -8,36 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.jisu.fragmenttest_20200608.BaseFragment
 import com.jisu.fragmenttest_20200608.R
 import kotlinx.android.synthetic.main.activity_first_fragment.*
 
-class FirstFragment : BaseFragment() {
+class EtcFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_first_fragment, container, false)
+        return inflater.inflate(R.layout.activity_etc_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        setupEvents()
-        setValues()
-    }
-
-    override fun setupEvents() {
-        telBtn.setOnClickListener {
-            val telEdit = telEdt.text.toString()
-            val myUri = Uri.parse("tel:${telEdit}")
-            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
-            startActivity(myIntent)
-        }
-    }
-
-    override fun setValues() {
     }
 }

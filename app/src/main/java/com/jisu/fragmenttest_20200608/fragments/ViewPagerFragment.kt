@@ -8,36 +8,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.jisu.fragmenttest_20200608.BaseFragment
 import com.jisu.fragmenttest_20200608.R
+import com.jisu.fragmenttest_20200608.adapter.MyPagerAdapter
 import kotlinx.android.synthetic.main.activity_first_fragment.*
+import kotlinx.android.synthetic.main.activity_fragment_view_pager.*
 
-class FirstFragment : BaseFragment() {
+class ViewPagerFragment : Fragment() {
+
+    lateinit var myPagerAdater: MyPagerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_first_fragment, container, false)
+        return inflater.inflate(R.layout.activity_fragment_view_pager, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        setupEvents()
-        setValues()
-    }
-
-    override fun setupEvents() {
-        telBtn.setOnClickListener {
-            val telEdit = telEdt.text.toString()
-            val myUri = Uri.parse("tel:${telEdit}")
-            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
-            startActivity(myIntent)
-        }
-    }
-
-    override fun setValues() {
     }
 }
